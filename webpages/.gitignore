@@ -1,0 +1,10 @@
+.log/
+node_modules/
+docs/
+css/
+export.scss
+export/
+
+# Parcel
+.parcel-cache/
+dist/

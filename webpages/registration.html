@@ -1,0 +1,73 @@
+<!doctype html>
+<head>
+    <title>Patient Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./index.css" rel="stylesheet">
+    <script type="module">
+        import { sendRegistration } from "./registration.ts";
+        
+        function getInputValue(id) {
+            return document.getElementById(id).value;
+        }
+
+        function handleSubmit() {
+            sendRegistration(
+                getInputValue('first-name'), 
+                getInputValue('last-name'), 
+                getInputValue('date-of-birth'), 
+                getInputValue('medicare-number'), 
+                getInputValue('reason')
+            );
+        }
+        
+        // Add an event listener to the button
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('submit').addEventListener('click', handleSubmit);
+        });
+    </script>
+<script>
+</script>
+
+<body>
+    <div class="w-full p-3.5">
+        <div class="grid p-3.5">
+            <div>
+                <h1 class="text-2xl font-medium py-8 px-4">Patient information</h1>
+                <label class="form-control flex px-4 pb-4">
+                    <div class="label">
+                        <span class="label-text">Given Name</span>
+                    </div>
+                    <input type="text" id="first-name" class="input input-bordered" />
+                </label>
+                <label class="form-control flex px-4 pb-4">
+                    <div class="label">
+                        <span class="label-text">Surname</span>
+                    </div>
+                    <input type="text" id="last-name" class="input input-bordered" />
+                </label>
+                <label class="form-control flex px-4 pb-4">
+                    <div class="label">
+                        <span class="label-text">Date of Birth</span>
+                    </div>
+                    <input type="date" id="date-of-birth" class="input input-bordered" />
+                </label>
+                <label class="form-control flex px-4 pb-4">
+                    <div class="label">
+                        <span class="label-text">Medicare Number</span>
+                    </div>
+                    <input type="text" id="medicare-number" class="input input-bordered" />
+                </label>
+                <label class="form-control px-4 pb-4">
+                    <div class="label">
+                        <span class="label-text">Main reason for visit</span>
+                    </div>
+                    <textarea type="textarea" id="reason" class="textarea textarea-bordered"></textarea>
+                </label>
+                <button type="button" id="submit" class="btn btn-primary m-4">Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
