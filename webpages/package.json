@@ -1,8 +1,12 @@
 {
   "name": "patient-analysis",
-  "source": "registration.html",
+  "source": [
+    "registration.html",
+    "manage.html"
+  ],
+  "publicUrl": "/",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel registration.html manage.html",
     "build": "parcel build"
   },
   "dependencies": {
@@ -10,5 +14,8 @@
     "daisyui": "^4.12.14",
     "parcel": "latest",
     "tailwindcss": "^3.4.15"
+  },
+  "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.13.2"
   }
 }

@@ -1,0 +1,31 @@
+<template id="patient-row-template">
+  <tr>
+    <td data-field="date"></td>
+    <td data-field="firstName"></td>
+    <td data-field="lastName"></td>
+    <td data-field="dob"></td>
+    <td data-field="medicareId"></td>
+    <td data-field="rawData">
+      <button class="btn btn-xs btn-primary" data-action="edit-view-raw">Edit/View</button>
+    </td>
+    <td data-field="processedData">
+      <button class="btn btn-xs btn-primary" data-action="edit-view-processed">Edit/View</button>
+    </td>
+    <td data-field="response">
+      <button class="btn btn-xs btn-primary" data-action="edit-view-response">Edit/View</button>
+    </td>
+    <td data-field="status"></td>
+    <td data-field="relevance">
+      <select class="select select-bordered select-xs w-full max-w-xs" data-action="update-relevance">
+        <option value="Relevant">Relevant</option>
+        <option value="Irrelevant">Irrelevant</option>
+        <option value="Ignore">Ignore</option>
+      </select>
+    </td>
+    <td>
+      <button class="btn btn-xs btn-accent mr-1" data-action="rerun">Rerun</button>
+      <button class="btn btn-xs btn-error" data-action="delete">Delete</button>
+    </td>
+  </tr>
+</template>
+
